@@ -28,7 +28,8 @@ async function initAudio() {
         // Create and connect nodes
         microphone = audioContext.createMediaStreamSource(stream);
         microphone.connect(gainNode);
-        gainNode.gain.setValueAtTime(2, audioContext.currentTime);
+        const gainSlider = document.getElementById('gain');
+        gainNode.gain.setValueAtTime(gainSlider.value, audioContext.currentTime);
         gainNode.connect(audioContext.destination);
 
         // Update UI
@@ -56,5 +57,17 @@ document.getElementById('stop').addEventListener('click', () => {
         document.getElementById('start').disabled = false;
     } catch (error) {
         console.error('Error stopping audio:', error);
+    }
+});
+
+// Add gain control listener
+const gainSlider = document.getElementById('gain');
+const gainValue = document.getElementById('gain-value');
+
+gainSlider.addEventListener('input', () => {
+    const value = parseFloat(gainSlider.value);
+    gainValue.textContent = value.toFixed(1);
+    if (gainNode) {
+        gainNode.gain.setValueAtTime(value, audioContext.currentTime);
     }
 });
