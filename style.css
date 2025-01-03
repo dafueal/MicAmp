@@ -52,3 +52,39 @@ button {
     align-items: center;
     gap: 10px;
 }
+
+.device-selector {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.device-selector label {
+    font-weight: bold;
+}
+
+.device-selector select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    min-width: 200px;
+    font-size: 14px;
+}
+
+#refreshDevices {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#refreshDevices:hover {
+    background-color: #f0f0f0;
+}

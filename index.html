@@ -10,6 +10,11 @@
     <div class="container">
         <h1>Audio Amplifier</h1>
         <div class="controls">
+            <div class="device-selector">
+                <label for="audioDevices">Select Audio Input:</label>
+                <select id="audioDevices"></select>
+                <button id="refreshDevices" title="Refresh device list">🔄</button>
+            </div>
             <button id="start">Start Amplifying</button>
             <button id="stop" disabled>Stop Amplifying</button>
             <div class="gain-control">
